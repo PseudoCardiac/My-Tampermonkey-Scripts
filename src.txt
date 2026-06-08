@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         ChatGPT Icon
+// @name         ChatGPT PFP
 // @namespace    https://github.com/PseudoCardiac
 // @version      2026-06-08
-// @description  adds icon to ChatGPT
+// @description  adds a custom profile picture to ChatGPT
 // @author       42@PseudoCardiac
 // @match        https://chatgpt.com/*
 // ==/UserScript==
