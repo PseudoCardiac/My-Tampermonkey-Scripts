@@ -1,0 +1,77 @@
+// ==UserScript==
+// @name         ChatGPT Icon
+// @namespace    https://github.com/PseudoCardiac
+// @version      2026-06-08
+// @description  adds icon to ChatGPT
+// @author       42@PseudoCardiac
+// @match        https://chatgpt.com/*
+// ==/UserScript==
+
+const URL = "PASTE IMAGE URL HERE"
+
+function addIcon ( target ) {
+    const icon = document.createElement( "div" );
+
+    icon.style.width = "120px";
+    icon.style.height = "120px";
+    icon.style.position = "sticky";
+    icon.style.top = "30px";
+    icon.style.bottom = "30px";
+    icon.style.borderRadius = "50%";
+    icon.style.backgroundImage = `url(${URL})`;
+    icon.style.backgroundSize = "120px 120px";
+
+    icon.classList.add( "assistant-icon" );
+
+    target.appendChild( icon );
+}
+
+function addDummy( target ) {
+    const rect = target.getBoundingClientRect();
+    const dummy = document.createElement("div");
+
+    Object.assign( dummy.style, {
+        position: "absolute",
+
+        left: "-150px",
+
+        width: "100%",
+        height: "100%",
+
+        // background: "rgba(255, 0, 0, 0.3)",
+
+        zIndex: "999999",
+        pointerEvents: "none"
+    } );
+
+    dummy.classList.add( "dummy-div" )
+    addIcon( dummy );
+    target.appendChild( dummy );
+}
+
+
+const observer = new MutationObserver((mutations) => {
+    for (const mutation of mutations) {
+        for (const node of mutation.addedNodes) {
+            // HTMLElement인지 확인
+            if (!(node instanceof HTMLElement)) continue;
+
+            // 추가된 노드 자체가 대상인지 확인
+            if (node.matches("div.agent-turn")) {
+                addDummy( node );
+            }
+
+            // 추가된 노드 내부에 대상이 있는지도 확인
+            const targets = node.querySelectorAll?.("div.agent-turn");
+
+            for (const target of targets) {
+                addDummy( target );
+            }
+        }
+    }
+});
+
+observer.observe(document.body, {
+    childList: true,
+    subtree: true
+});
