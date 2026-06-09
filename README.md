@@ -7,4 +7,5 @@
 ## 추가 사용법 - ChatGPT PFP
 5. 스크립트를 클릭헤 에디터를 연다.
 6. 10번째 줄의 `PASTE IMAGE URL HERE` 텍스트를 원하는 이미지의 URL로 대체한다.
-7. 저장한다.
+7. 11번째 줄의 `ENTER YOUR NAME HERE` 텍스트를 원하는 이름으로 대체한다.
+8. 저장한다.
