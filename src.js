@@ -12,14 +12,13 @@ const URL = "PASTE IMAGE URL HERE"
 function addIcon ( target ) {
     const icon = document.createElement( "div" );
 
-    icon.style.width = "120px";
-    icon.style.height = "120px";
+    icon.style.width = "10%";
+    icon.style.aspectRatio = 1;
     icon.style.position = "sticky";
-    icon.style.top = "30px";
-    icon.style.bottom = "30px";
+    icon.style.top = "3.25rem";
     icon.style.borderRadius = "50%";
     icon.style.backgroundImage = `url(${URL})`;
-    icon.style.backgroundSize = "120px 120px";
+    icon.style.backgroundSize = "100% 100%";
 
     icon.classList.add( "assistant-icon" );
 
@@ -33,7 +32,7 @@ function addDummy( target ) {
     Object.assign( dummy.style, {
         position: "absolute",
 
-        left: "-150px",
+        left: "-12.5%",
 
         width: "100%",
         height: "100%",
