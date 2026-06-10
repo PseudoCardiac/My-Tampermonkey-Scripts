@@ -96,9 +96,9 @@ const observer = new MutationObserver( ( mutations ) => {
         for ( const node of mutation.addedNodes ) {
             if ( !( node instanceof HTMLElement ) ) continue;
 
-            if ( node.matches( "div[data-message-author-role=user]" ) ) {
+            if ( node.matches( "div.agent-turn" ) ) {
                 addDummy( node, true );
-            } else if ( node.matches( "div.text-message" ) ) {
+            } else if ( node.matches( "div[data-message-author-role=user]" ) ) {
                 addDummy( node, false );
             }
 
