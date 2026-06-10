@@ -16,7 +16,7 @@ style.textContent = `
     --c-greBacSec: #91bd6e;
     --c-oraBacSec: #f0a554;
     --c-pinBacSec: #e5a3c3;
-    --c-purBacSec: #ac93be;
+    --c-purBacSec: #a493be;
     --c-redBacSec: #e16668;
     --c-teaBacSec: #79c1a9;
     --c-yelBacSec: #efc500;
